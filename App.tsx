@@ -1,13 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import ServicePage from './pages/ServicePage';
-import LegalPage from './pages/LegalPage';
 import SkipToContentLink from './components/SkipToContentLink';
 import { ModalProvider } from './context/ModalContext';
-import ContactModal from './components/ContactModal';
+
+// Lazy load components
+const Home = lazy(() => import('./pages/Home'));
+const ServicePage = lazy(() => import('./pages/ServicePage'));
+const LegalPage = lazy(() => import('./pages/LegalPage'));
+const ContactModal = lazy(() => import('./components/ContactModal'));
+
+// Loading component
+const Loading = () => (
+  <div className="flex items-center justify-center min-h-screen">
+    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-brand-red"></div>
+  </div>
+);
 
 const App: React.FC = () => {
   const { pathname, hash, key } = useLocation();
@@ -33,19 +42,23 @@ const App: React.FC = () => {
         <SkipToContentLink />
         <Header />
         <main id="main-content" className="flex-grow z-10">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/website-design" element={<ServicePage service="Website Design" />} />
-            <Route path="/seo-ppc" element={<ServicePage service="SEO & PPC" />} />
-            <Route path="/social" element={<ServicePage service="Social Media Marketing" />} />
-            <Route path="/graphic-design" element={<ServicePage service="Graphic Designing" />} />
-            <Route path="/contact" element={<ServicePage service="Contact" />} />
-            <Route path="/privacy" element={<LegalPage page="Privacy" />} />
-            <Route path="/terms" element={<LegalPage page="Terms" />} />
-          </Routes>
+          <Suspense fallback={<Loading />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/website-design" element={<ServicePage service="Website Design" />} />
+              <Route path="/seo-ppc" element={<ServicePage service="SEO & PPC" />} />
+              <Route path="/social" element={<ServicePage service="Social Media Marketing" />} />
+              <Route path="/graphic-design" element={<ServicePage service="Graphic Designing" />} />
+              <Route path="/contact" element={<ServicePage service="Contact" />} />
+              <Route path="/privacy" element={<LegalPage page="Privacy" />} />
+              <Route path="/terms" element={<LegalPage page="Terms" />} />
+            </Routes>
+          </Suspense>
         </main>
         <Footer />
-        <ContactModal />
+        <Suspense fallback={null}>
+          <ContactModal />
+        </Suspense>
       </div>
     </ModalProvider>
   );
