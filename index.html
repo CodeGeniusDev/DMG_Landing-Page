@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-g" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TQM Digital | High-Converting Website Design & Redesign</title>
+    <meta name="description" content="TQM Digital specializes in high-performance website design and redesigns that are fast, modern, and built to convert. We help U.S. businesses scale their revenue with digital precision.">
+    
+    <!-- Google Fonts: DM Sans and Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind CSS Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                red: '#FD0101',
+              },
+              neutral: {
+                50: '#F7FAFC',
+                700: '#334155',
+                900: '#0B0F19',
+              },
+              accents: {
+                blue: '#2563EB',
+                green: '#16A34A',
+              },
+              borders: '#E5E7EB',
+              slate: {
+                300: '#cbd5e1',
+                400: '#94a3b8',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              heading: ['DM Sans', 'sans-serif'],
+            },
+            maxWidth: {
+              'container': '1200px',
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Google Analytics (GA4) Placeholder -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX'); // Replace with your GA4 Measurement ID
+    </script>
+    <style>
+      :root {
+        --grad-hero: linear-gradient(180deg,#0B0F19 0%,#0B0F19 40%,#0F172A 100%);
+        --grad-1: linear-gradient(180deg,#0C111F 0%,#0F172A 100%);
+        --grad-2: linear-gradient(180deg,#0D1422 0%,#111827 100%);
+        --grad-3: linear-gradient(180deg,#0E1626 0%,#121826 100%);
+        --grad-4: linear-gradient(180deg,#0E1828 0%,#131B2B 100%);
+      }
+      .dot-grid-background {
+        background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 0);
+        background-size: 20px 20px;
+      }
+      .radial-glow::before {
+        content: '';
+        position: absolute;
+        width: 30rem;
+        height: 30rem;
+        border-radius: 9999px;
+        filter: blur(6rem);
+        background-color: rgba(253, 1, 1, 0.1);
+        z-index: -1;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.553.0",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.5",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-hook-form": "https://aistudiocdn.com/react-hook-form@^7.66.0",
+    "zod": "https://aistudiocdn.com/zod@^4.1.12",
+    "@hookform/resolvers/": "https://aistudiocdn.com/@hookform/resolvers@^5.2.2/",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-neutral-900 text-slate-300 font-sans antialiased">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
