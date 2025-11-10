@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Star } from "lucide-react";
-import { Animated } from "./Animated";
-import { Logo } from "./Logo";
+import { Animated } from "../components/Animated";
+import { Logo } from "../components/Logo";
 
 type Review = {
   author: string;

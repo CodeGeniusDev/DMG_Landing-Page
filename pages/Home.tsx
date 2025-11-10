@@ -8,7 +8,7 @@ import WebsiteOutcomes from '../sections/CaseStudies';
 import ProcessWeb from '../sections/Process';
 import SupportingServiceBands from '../components/Counter';
 import Testimonials from '../sections/Testimonials';
-import ReviewSlider from '../components/ReviewSlider';
+import ReviewSlider from '../sections/ReviewSlider';
 import Pricing from '../sections/Pricing';
 import Faq from '../sections/Faq';
 import CtaBand from '../sections/CtaBand';
