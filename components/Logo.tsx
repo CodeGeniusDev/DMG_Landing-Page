@@ -20,8 +20,8 @@ export const Logo: React.FC<LogoProps> = ({
   alt = 'TQM Digital Logo',
 }) => {
   // Define logo file paths based on the project directory structure
-  const lightLogoSrc = 'public/images/brand/tqm-logo-light.webp';
-  const darkLogoSrc = 'public/images/brand/tqm-logo-dark.webp';
+  const lightLogoSrc = '/images/brand/tqm-logo-light.webp';
+  const darkLogoSrc = '/images/brand/tqm-logo-dark.webp';
 
   const logoSrc = variant === 'dark' ? darkLogoSrc : lightLogoSrc;
 
