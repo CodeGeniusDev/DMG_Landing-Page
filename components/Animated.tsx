@@ -1,6 +1,5 @@
-
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 type AnimationWrapperProps = {
   children: React.ReactNode;
@@ -15,13 +14,17 @@ const variants = {
   visibleSimple: { opacity: 1 },
 };
 
-export const Animated: React.FC<AnimationWrapperProps> = ({ children, className, delay = 0 }) => {
+export const Animated: React.FC<AnimationWrapperProps> = ({
+  children,
+  className,
+  delay = 0,
+}) => {
   return (
     <motion.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.3, delay, ease: 'easeOut' }}
+      transition={{ duration: 0.3, delay, ease: "easeOut" }}
       variants={variants}
       className={className}
       // Respects prefers-reduced-motion by switching to a simple fade

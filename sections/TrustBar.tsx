@@ -15,12 +15,15 @@ const metrics = [
 ];
 
 const clientLogos = [
-  { src: "/images/image_0.png", alt: "Custom Installations and Remodeling logo" },
-  { src: "/images/image_1.png", alt: "Bears Cleaning Service logo" },
-  { src: "/images/image_2.png", alt: "Sir Savills Ideal Rubs logo" },
-  { src: "/images/image_3.png", alt: "Adom Wellness logo" },
-  { src: "/images/image_4.png", alt: "Speedy Bail Bonds logo" },
-  { src: "/images/image_5.png", alt: "NKY Pro Lawn Care logo" },
+  {
+    src: "/images/Logo/google.png",
+    alt: "Custom Installations and Remodeling logo",
+  },
+  { src: "/images/Logo/google.png", alt: "Bears Cleaning Service logo" },
+  { src: "/images/Logo/google.png", alt: "Sir Savills Ideal Rubs logo" },
+  { src: "/images/Logo/google.png", alt: "Adom Wellness logo" },
+  { src: "/images/Logo/google.png", alt: "Speedy Bail Bonds logo" },
+  { src: "/images/Logo/google.png", alt: "NKY Pro Lawn Care logo" },
 ];
 
 const MetricCounter: React.FC<{ metric: (typeof metrics)[0] }> = ({
