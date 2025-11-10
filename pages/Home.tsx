@@ -2,7 +2,6 @@ import React from "react";
 import Hero from "../sections/Hero";
 import ProofBar from "../sections/TrustBar";
 import ServicePriorityGrid from "../sections/Services";
-import GoogleSlider from "../sections/GoogleSlider";
 import WebsiteSpotlight from "../sections/USFocus";
 import WebsiteOutcomes from "../sections/CaseStudies";
 import ProcessWeb from "../sections/Process";
@@ -53,7 +52,6 @@ const Home: React.FC = () => {
       <Hero />
       <WebsiteSpotlight />
       <ReviewSlider />
-      <GoogleSlider />
       <ProofBar />
       <ServicePriorityGrid />
       <WebsiteOutcomes />
