@@ -111,25 +111,53 @@ const ReviewCard: React.FC<{ review: Review }> = ({ review }) => {
   );
 };
 
+// Sample reviews data
+const sampleReviews: Review[] = [
+  {
+    author: "John Doe",
+    rating: 5,
+    time: new Date().toISOString(),
+    text: "TQM Digital transformed our online presence completely. Our website is now faster and more engaging than ever before!",
+    profileUrl: "https://business.google.com",
+    source: "Google"
+  },
+  {
+    author: "Sarah Johnson",
+    rating: 5,
+    time: new Date(Date.now() - 86400000).toISOString(), // 1 day ago
+    text: "The team's attention to detail and understanding of our business needs was impressive. Highly recommended!",
+    profileUrl: "https://business.google.com",
+    source: "Google"
+  },
+  {
+    author: "Michael Chen",
+    rating: 5,
+    time: new Date(Date.now() - 172800000).toISOString(), // 2 days ago
+    text: "Our conversion rates have increased significantly since working with TQM Digital. Their expertise in web design is unmatched.",
+    profileUrl: "https://business.google.com",
+    source: "Google"
+  },
+  {
+    author: "Emily Rodriguez",
+    rating: 5,
+    time: new Date(Date.now() - 259200000).toISOString(), // 3 days ago
+    text: "Professional, responsive, and delivered beyond our expectations. Will definitely work with them again!",
+    profileUrl: "https://business.google.com",
+    source: "Google"
+  }
+];
+
 const ReviewSlider: React.FC<ReviewSliderProps> = ({
   title = "What Our Clients Say",
   autoPlayMs = 5000,
-  dataPath = "/data/reviews.json",
 }) => {
-  const [reviews, setReviews] = useState<Review[]>([]);
+  const [reviews] = useState<Review[]>(sampleReviews);
   const [page, setPage] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(3);
   const [direction, setDirection] = useState(0);
 
   const autoplayRef = useRef<number | null>(null);
   const shouldReduceMotion = useReducedMotion();
-
-  useEffect(() => {
-    fetch(dataPath)
-      .then((res) => res.json())
-      .then((data) => setReviews(data))
-      .catch(console.error);
-  }, [dataPath]);
 
   useEffect(() => {
     const updateItemsPerPage = () => {
